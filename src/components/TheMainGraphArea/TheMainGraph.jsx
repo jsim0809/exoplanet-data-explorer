@@ -56,7 +56,6 @@ class TheMainGraph extends Component {
         svg.append("g")
             .call(d3.axisLeft(y));
 
-        // Add dots
         svg.append('g')
             .selectAll("dot")
             .data(data)

@@ -6,7 +6,7 @@ import { Container, createTheme, Paper, ThemeProvider } from '@mui/material';
 import { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 
-// I made a design decision to hardcode axis values. We can discuss tradeoffs!
+// Design decision: hardcoded axis values.
 const AXIS_VALUES = [
   'P. Min Mass (EU)', 'P. Mass (EU)', 'P. Max Mass (EU)', 'P. Radius (EU)', 'P. Density (EU)', 'P. Gravity (EU)', 'P. Esc Vel (EU)',
   'P. SFlux Min (EU)', 'P. SFlux Mean (EU)', 'P. SFlux Max (EU)', 'P. Teq Min (K)', 'P. Teq Mean (K)', 'P. Teq Max (K)', 'P. Ts Min (K)',
