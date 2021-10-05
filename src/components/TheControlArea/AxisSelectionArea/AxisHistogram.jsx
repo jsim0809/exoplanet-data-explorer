@@ -7,7 +7,15 @@ class AxisHistogram extends Component {
     this.histogramRef = createRef();
   }
 
+  componentDidMount() {
+    this.drawHistogram();
+  }
+
   componentDidUpdate() {
+    this.drawHistogram();
+  }
+
+  drawHistogram() {
     let { selectedData } = this.props;
     var bins = d3.bin().thresholds(40)(selectedData);
 
@@ -30,6 +38,11 @@ class AxisHistogram extends Component {
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // If no selected data, don't draw axes yet
+    if (!selectedData.length) {
+      return;
+    }
 
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
